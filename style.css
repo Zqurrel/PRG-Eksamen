@@ -1,0 +1,35 @@
+body
+{
+	background-color:white;
+	background-repeat: no-repeat;
+	
+	
+}
+#container
+{
+	text-align: center;
+	border: solid black;
+	width: 350px;
+	height: 600px;
+	position: absolute;
+	left: 5px;
+	top: 10px;
+}
+
+#nav
+{
+	border: solid black;
+	margin: 5px;
+	width: 200px;
+	text-align: center;
+	
+}
+#main
+{
+	border: solid black;
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: -2.8px; 
+	left: 360px;
+}
