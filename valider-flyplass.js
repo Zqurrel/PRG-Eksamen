@@ -1,27 +1,20 @@
-function validerFlyplass()
-{
-	var flyplassnavn=document.getElementById("flyplassnavn").value; 
-	var flyplasskode=document.getElementById("flyplasskode").value;
-	
-	var feilmelding="";
-	
-	if(!flyplassnavn)
+function validerFlyplass(){
+    var flyplasskode = document.getElementById('flyplasskode').value;
+    if (flyplasskode.length!=3) /* flyplasskode bestĆ�r ikke av 3 tegn */
 	{
-		feilmelding="Flyplassnavn er ikke korrekt utfyllt </br>";
-	}
-	if(!flyplasskode)
-	{
-		feilmelding=feilmelding +"Flyplasskode er ikke korrekt utfylt </br>";
-	}
-	
-	if(flyplassnavn && flyplasskode)
-	{
-		return true;
-	}
+        alert("Flyplasskode har ikke 3 tegn");
+        return false;
+    }
 	else
 	{
-		document.getElementById("melding").style.color="red";
-		document.getElementById("melding").innerHTML=feilmelding;
+	tegn1=flyplasskode.substr(0,1);  /* fĆørste tegn i flyplasskode */
+    tegn2=flyplasskode.substr(1,1);  /* andre tegn i flyplasskode */
+    tegn3=flyplasskode.substr(2,1);  /* tredje tegn i flyplasskode */
+	    if (tegn1 < "a" || tegn1 > "z" || tegn2 < "a" || tegn2 > "z" || tegn3 < "a" || tegn3 > "z")  /* minst ett av tegnene er ulovlig */
+      {
+        alert("Flyplasskode har minst et utlovlig tegn");
 		return false;
+      }
 	}
+  return true;
 }
