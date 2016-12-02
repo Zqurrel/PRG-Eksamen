@@ -1,6 +1,18 @@
-function validerFlyplass(){
+function validerFlyplass()
+{
     var flyplasskode = document.getElementById('flyplasskode').value;
-    if (flyplasskode.length!=3) /* flyplasskode bestĆ�r ikke av 3 tegn */
+    if (flyplasskode == "") 
+	{
+        alert("Flyplasskode er ikke fyllt ut");
+        return false;
+    }
+	var flyplassnavn = document.getElementById('flyplassnavn').value;
+    if (flyplassnavn == "") 
+	{
+        alert("Flyplassnavn er ikke fyllt ut");
+        return false;
+    }
+	    if (flyplasskode.length!=3) /* flyplasskode bestĆ�r ikke av 3 tegn */
 	{
         alert("Flyplasskode har ikke 3 tegn");
         return false;
