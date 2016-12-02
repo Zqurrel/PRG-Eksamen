@@ -1,27 +1,16 @@
 function validerFlyrute()
 {
-	var fraflyplass=document.getElementById("fraflyplass").value; 
-	var tilflyplass=document.getElementById("tilflyplass").value;
-	
-	var feilmelding="";
-	
-	if(!fraflyplass)
+	var fraflyplass = document.getElementById('fraflyplass').value;
+    if (fraflyplass == "") 
 	{
-		feilmelding="Fra flyplass er ikke korrekt utfyllt </br>";
-	}
-	if(!tilflyplass)
+        alert("Fraflyplass er ikke fyllt ut");
+        return false;
+    }
+	var tilflyplass = document.getElementById('tilflyplass').value;
+    if (tilflyplass == "") 
 	{
-		feilmelding=feilmelding +"Til flyplass er ikke korrekt utfylt </br>";
-	}
-	
-	if(fraflyplass && tilflyplass)
-	{
-		return true;
-	}
-	else
-	{
-		document.getElementById("melding").style.color="red";
-		document.getElementById("melding").innerHTML=feilmelding;
-		return false;
-	}
+        alert("Tilflyplass er ikke fyllt ut");
+        return false;
+    }
+  return true;
 }
