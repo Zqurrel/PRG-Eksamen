@@ -5,33 +5,51 @@
 <script type="text/javascript" src="valider-flygning.js"></script>
 <script type="text/javascript" src="registrer-flygning.js"></script>  
 <script>
+function validerFlyplassKode(kode)
+{
+	var bokstaver = /^[a-z]+$/;
+	var lovlig;  
+	if (kode.length !=3) 
+	{
+		lovlig=false;
+	}
+	else if (!kode.match(bokstaver))
+	{
+		lovlig=false;
+	}
+  return lovlig;
+}
 function validerFlygning()
 {
-    var flightnr = document.getElementById('flightnr').value;
-    if (flightnr == "") 
-	{
-        alert("Flightnr er ikke fyllt ut");
-        return false;
-    }
-	var fraflyplass = document.getElementById('fraflyplass').value;
-    if (fraflyplass == "") 
-	{
-        alert("Fraflyplass er ikke fyllt ut");
-        return false;
-    }
-	var tilflyplass = document.getElementById('tilflyplass').value;
-    if (tilflyplass == "") 
-	{
-        alert("Tilflyplass er ikke fyllt ut");
-        return false;
-    }
-	var dato = document.getElementById('dato').value;
-    if (dato == "") 
-	{
-        alert("Dato er ikke fyllt ut");
-        return false;
-    }
+	var lovlig;
+    var fraFlyplass=document.getElementById("fraflyplass").value;
+    var tilFlyplass=document.getElementById("tilflyplass").value;
+    var feilmelding="";
+		if (fraFlyplass==tilFlyplass)
+		{
+			alert("Du kan ikke fly til samme sted som du drar fra");
+			lovlig=false;
+		}
 	else 
+	{
+		var lovligFraFlyplass=validerFlyplassKode(fraFlyplass);
+		var lovligTilFlyplass=validerFlyplassKode(tilFlyplass);
+		
+		if (lovligFraFlyplass==false)
+		{
+			alert("Fra flyplass er ikke korrekt fylt");
+
+			lovlig=false;
+		}
+		if (lovligTilFlyplass==false)
+		{
+			alert("Til flyplass har er ikke korrekt fylt");
+
+			lovlig=false;
+		}
+	}
+	
+	var dato = document.getElementById('dato').value;
 	{
 	tegn1=dato.substr(0,1);  /* første tegn i dato */
     tegn2=dato.substr(1,1);  /* andre tegn i dato */
