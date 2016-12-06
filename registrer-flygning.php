@@ -43,7 +43,9 @@ function validerFlygning()
     tegn8=dato.substr(7,1);  /* tredje tegn i flyplasskode */
 	tegn9=dato.substr(8,1);  /* tredje tegn i flyplasskode */
 	tegn10=dato.substr(9,1);  /* tredje tegn i flyplasskode */
-	    if (tegn1 < "0" || tegn1 > "9" || tegn2 < "0" || tegn2 > "9" || tegn3 < "0" || tegn3 > "9" || tegn4 < "0" || tegn4 > "9" || tegn5 < "-" || tegn5 > "-" || tegn6 < "0" || tegn6 > "9" || tegn7 < "0" || tegn7 > "9" || tegn8 < "-" || tegn8 > "-" || tegn9 < "0" || tegn9 > "9" || tegn10 < "0" || tegn10 > "9")  /* minst ett av tegnene er ulovlig */
+	    if (tegn1 < "0" || tegn1 > "9" || tegn2 < "0" || tegn2 > "9" || tegn3 < "0" || tegn3 > "9" || tegn4 < "0" || tegn4 > "9" || /* år tall */
+		tegn5 < "-" || tegn5 > "-" || tegn6 < "0" || tegn6 > "9" || tegn7 < "0" || tegn7 > "9" ||  /* måned */
+		tegn8 < "-" || tegn8 > "-" || tegn9 < "0" || tegn9 > "9" || tegn10 < "0" || tegn10 > "9")  /* dato */
       {
         alert("Dato er ikke korrekt fyllt ut");
 		return false;
