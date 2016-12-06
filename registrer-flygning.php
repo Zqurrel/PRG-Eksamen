@@ -21,6 +21,21 @@ function validerFlyplassKode(kode)
 }
 function validerFlygning()
 {
+	var flightnr = document.getElementById('flightnr').value;
+	{
+	tegn1=flightnr.substr(0,1);  /* første tegn i flightnr */
+    tegn2=flightnr.substr(1,1);  /* andre tegn i flightnr */
+    tegn3=flightnr.substr(2,1);  /* tredje tegn i flightnr */
+	tegn4=flightnr.substr(3,1);  /* fjerde tegn i flightnr */
+	tegn5=flightnr.substr(4,1);  /* femte tegn i flightnr */
+	    if (tegn1 < "a" || tegn1 > "z" || tegn2 < "a" || tegn2 > "z" || tegn3 < "0" || tegn3 > "9" 
+		|| tegn4 < "0" || tegn4 > "9" || tegn5 < "0" || tegn5 > "9" ) 
+      {
+        alert("flightnr er ikke korrekt fyllt ut");
+		return false;
+      }
+	}
+	
 	var lovlig;
     var fraFlyplass=document.getElementById("fraflyplass").value;
     var tilFlyplass=document.getElementById("tilflyplass").value;
