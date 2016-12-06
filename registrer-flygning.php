@@ -44,14 +44,13 @@ function validerFlygning()
 	tegn9=dato.substr(8,1);  /* niende tegn i dato */
 	tegn10=dato.substr(9,1);  /* tiende tegn i dato */
 	    if (tegn1 < "0" || tegn1 > "9" || tegn2 < "0" || tegn2 > "9" || tegn3 < "0" || tegn3 > "9" || tegn4 < "0" || tegn4 > "9" || /* årstall */
-		tegn5 < "-" || tegn5 > "-" || tegn6 < "0" || tegn6 > "9" || tegn7 < "0" || tegn7 > "9" ||  /* bindestrek og måned */
-		tegn8 < "-" || tegn8 > "-" || tegn9 < "0" || tegn9 > "9" || tegn10 < "0" || tegn10 > "9")  /* bindestrek og dato */
+		tegn5 < "-" || tegn5 > "-" || tegn6 < "0" || tegn6 > "1" || tegn7 < "0" || tegn7 > "2" ||  /* bindestrek og måned */
+		tegn8 < "-" || tegn8 > "-" || tegn9 < "0" || tegn9 > "3" || tegn10 < "0" || tegn10 > "9")  /* bindestrek og dato */
       {
         alert("Dato er ikke korrekt fyllt ut");
 		return false;
       }
 	}
-
   return true;
 }
 </script>
@@ -86,7 +85,6 @@ if(isset($_POST["registrer"]))
      $nummer=trim($nummer);
      while($linje=fgets($lesflygning))
      {
-
          $sjekk=explode(";",$linje);
          $sjekk[0]=trim($sjekk[0]);
          
@@ -100,7 +98,6 @@ if(isset($_POST["registrer"]))
      fclose($lesflygning);
       return $tilbakemelding;
 }       
-
     if(!$flightnr || !$fraflyplass || !$tilflyplass || !$dato) {
         print("Alle felter må fylles ut!");
     }
@@ -113,19 +110,13 @@ if(isset($_POST["registrer"]))
         else {
     $filnavn="flygning.txt";
     $filoperasjon="a";
-
     $fil=fopen($filnavn,$filoperasjon);
-
     $linje=$flightnr . ";" . $fraflyplass . ";" . $tilflyplass . ";" . $dato . "\n";
-
     fwrite($fil,$linje);
-
     fclose($fil);
-
     print("<br>");
     print("Flygning registrert!");
         }
-
     }
 }
 include("slutt.html");
