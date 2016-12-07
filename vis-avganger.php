@@ -24,7 +24,7 @@
 	@$fraflyplass=$_POST ["fraflyplass"];
 	$fraflyplass=trim($fraflyplass);
 	
-	$filnavn="D:Sites\\home.hbv.no\\phptemp\\146814/flygning.txt";
+	$filnavn="D:\\Sites\\home.hbv.no\\phptemp\\146814/flygning.txt";
 	$filoperasjon="r";
 	
 	print ("Disse flygningene har avgang fra $fraflyplass <br> <br>");

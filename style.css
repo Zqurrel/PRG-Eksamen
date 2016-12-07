@@ -10,7 +10,7 @@ body
 	text-align: center;
 	border: solid black;
 	width: 350px;
-	height: 600px;
+	height: 650px;
 	position: absolute;
 	left: 5px;
 	top: 10px;
@@ -28,7 +28,7 @@ body
 {
 	border: solid black;
 	width: 600px;
-	height: 600px;
+	height: 650px;
 	position: absolute;
 	top: -2.8px; 
 	left: 360px;

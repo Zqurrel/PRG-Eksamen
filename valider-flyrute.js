@@ -1,16 +1,45 @@
+function validerFlyplassKode(kode)
+{
+	var bokstaver = /^[a-z]+$/;
+	var lovlig;  
+	if (kode.length !=3) 
+	{
+		lovlig=false;
+	}
+	else if (!kode.match(bokstaver))
+	{
+		lovlig=false;
+	}
+  return lovlig;
+}
 function validerFlyrute()
 {
-	var fraflyplass = document.getElementById('fraflyplass').value;
-    if (fraflyplass == "") 
+    var lovlig;
+    var fraFlyplass=document.getElementById("fraflyplass").value;
+    var tilFlyplass=document.getElementById("tilflyplass").value;
+    var feilmelding="";
+		if (fraFlyplass==tilFlyplass)
+		{
+			alert("Du kan ikke fly til samme sted som du drar fra");
+			lovlig=false;
+		}
+	else 
 	{
-        alert("Fraflyplass er ikke fyllt ut");
-        return false;
-    }
-	var tilflyplass = document.getElementById('tilflyplass').value;
-    if (tilflyplass == "") 
-	{
-        alert("Tilflyplass er ikke fyllt ut");
-        return false;
-    }
-  return true;
+		var lovligFraFlyplass=validerFlyplassKode(fraFlyplass);
+		var lovligTilFlyplass=validerFlyplassKode(tilFlyplass);
+		
+		if (lovligFraFlyplass==false)
+		{
+			alert("Fra flyplass er ikke korrekt fylt");
+
+			lovlig=false;
+		}
+		if (lovligTilFlyplass==false)
+		{
+			alert("Til flyplass har er ikke korrekt fylt");
+
+			lovlig=false;
+		}
+	}
+  return lovlig;
 }
