@@ -6,7 +6,7 @@ function validerFlyplassKode(kode)
 	{
 		lovlig=false;
 	}
-	else if (!kode.match(bokstaver)) // koden ikke matcher med bokstaver
+	else if (!kode.match(bokstaver)) // koden matcher ikke med bokstaver
 	{
 		lovlig=false;
 	}
