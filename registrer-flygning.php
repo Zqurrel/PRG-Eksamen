@@ -2,7 +2,7 @@
 	include("start.html")
 ?>
 <head>
-<script type="text/javascript" src="valider-flygning.js"></script>
+<script type="text/javascript" src="validering.js"></script>
 <script type="text/javascript" src="registrer-flygning.js"></script>  
 </head>
 <h1>Registrer flygning</h1>
