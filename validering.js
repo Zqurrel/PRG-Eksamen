@@ -147,7 +147,7 @@ return false;
 }
 else
 {
-alert("Dato er ikke korrekt fylt");
+alert("Datoen er ikke korrekt fylt");
 document.form1.text1.focus();
 return false;
 }
