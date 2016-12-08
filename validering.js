@@ -2,7 +2,7 @@ function validerFlyplassKode(kode)
 {
 	var bokstaver = /^[a-z]+$/; //ulovlig tegn hvis man ikke har bokstaver
 	var lovlig;  
-	if (kode.length !=3) // flyplasskode kan ikke være lengere enn 3 tegn 
+	if (kode.length !=3) // koden kan ikke være lengere enn 3 tegn 
 	{
 		lovlig=false;
 	}
