@@ -1,58 +1,6 @@
 <?php 
 	include("start.html")
 ?>
-<head>
-<script type="text/javascript" src="registrer-flyrute.js"></script>
-<script type="text/javascript" src="valider-flyrute.js"></script> 
-<script type="text/javascript" src="ajax.js"></script>
-<script>
-function validerFlyplassKode(kode)
-{
-	var bokstaver = /^[a-z]+$/;
-	var lovlig;  
-	if (kode.length !=3) 
-	{
-		lovlig=false;
-	}
-	else if (!kode.match(bokstaver))
-	{
-		lovlig=false;
-	}
-  return lovlig;
-}
-function validerFlyrute()
-{
-    var lovlig;
-    var fraFlyplass=document.getElementById("fraflyplass").value;
-    var tilFlyplass=document.getElementById("tilflyplass").value;
-    var feilmelding="";
-		if (fraFlyplass==tilFlyplass)
-		{
-			alert("Du kan ikke fly til samme sted som du drar fra");
-			lovlig=false;
-		}
-	else 
-	{
-		var lovligFraFlyplass=validerFlyplassKode(fraFlyplass);
-		var lovligTilFlyplass=validerFlyplassKode(tilFlyplass);
-		
-		if (lovligFraFlyplass==false)
-		{
-			alert("Fra flyplass er ikke korrekt fylt");
-
-			lovlig=false;
-		}
-		if (lovligTilFlyplass==false)
-		{
-			alert("Til flyplass har er ikke korrekt fylt");
-
-			lovlig=false;
-		}
-	}
-  return lovlig;
-}
-</script>
-</head>
 <h1>Registrer flyrute</h1>
 
 	<form method="post" action="registrer-flyrute.php" id="PRG" name="PRG" onSubmit="return validerFlyrute()"><br/>
@@ -71,7 +19,7 @@ if(isset($_POST["registrer"])) {
     $tilflyplass=$_POST["tilflyplass"];
 
     if(!$fraflyplass || !$tilflyplass) {
-        print("Alle felter må fylles ut!");
+        print("Alle feltene må fylles ut");
     }
     else {
 
@@ -103,7 +51,7 @@ if(isset($_POST["registrer"])) {
     $lovlig=validerUnik();
     if ($lovlig=="false")
     {
-        print "Denne flyruten eksisterer allerede!";
+        print "Flyruten finnes allerede";
     }
     else
     {   
@@ -119,7 +67,7 @@ if(isset($_POST["registrer"])) {
     fclose($fil);
 
     print("<br>");
-    print("Flyrute fra $fraflyplass til $tilflyplass registrert!");
+    print("Flyrute fra $fraflyplass til $tilflyplass er registrert");
     }
     }
 }
