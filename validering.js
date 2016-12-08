@@ -129,7 +129,7 @@ return false;
 if (mm==2)
 {
 var lyear = false;
-if ( (!(yy % 4) && yy % 100) || !(yy % 400)) 
+if ( (!(yy % 4) && yy % 100) || !(yy % 400)) // modulus operator for å beregne skuddår
 {
 lyear = true;
 }
