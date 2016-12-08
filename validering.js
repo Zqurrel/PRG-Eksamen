@@ -2,11 +2,11 @@ function validerFlyplassKode(kode)
 {
 	var bokstaver = /^[a-z]+$/; //ulovlig tegn hvis man ikke har bokstaver
 	var lovlig;  
-	if (kode.length !=3) // koden kan ikke være lengere enn 3 tegn 
+	if (kode.length !=3) // koden består ikke av 3 tegn 
 	{
 		lovlig=false;
 	}
-	else if (!kode.match(bokstaver)) // koden ikke matcher med bokstaver
+	else if (!kode.match(bokstaver)) // koden matcher ikke med bokstavene
 	{
 		lovlig=false;
 	}
@@ -36,7 +36,7 @@ function validerFlyrute()
 		}
 		if (lovligTilFlyplass==false)
 		{
-			alert("Til flyplass har er ikke korrekt fylt");
+			alert("Til flyplass er ikke korrekt fylt");
 
 			lovlig=false;
 		}
@@ -90,7 +90,7 @@ function validerFlygning()
 		}
 		if (lovligTilFlyplass==false)
 		{
-			alert("Til flyplass har er ikke korrekt fylt");
+			alert("Til flyplass er ikke korrekt fylt");
 			lovlig=false;
 		}
 	}
