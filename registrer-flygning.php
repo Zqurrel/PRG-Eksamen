@@ -12,7 +12,7 @@
 	Fra flyplass: <input type="text" id="fraflyplass" name="fraflyplass" placeholder="Skriv her"  onFocus="fokus(this)" onBlur="mistetFokus (this)" onMouseOver="musInn(this)" onMouseOut="musUt()" required /> </label> <br>
     Til flyplass: <input type="text" id="tilflyplass" name="tilflyplass" placeholder="Skriv her"  onFocus="fokus(this)" onBlur="mistetFokus (this)" onMouseOver="musInn(this)" onMouseOut="musUt()" required /> </label> <br>
     Dato: <input type="text" id="dato" name="text1" placeholder="Skriv her"  onFocus="fokus(this)" onBlur="mistetFokus (this)" onMouseOver="musInn(this)" onMouseOut="musUt()" required /> </label> <br>
-	<input type="submit" value="Registrer" name="registrer" id="registrer" onclick="return validatedate(document.form1.text1)"/>
+	<input type="submit" value="Registrer" name="registrer" id="registrer" onclick="return validerdato(document.form1.text1)"/>
 	<input type="reset" value="Nullstill" id="nullstill" />
 	</form>
 	<br>
