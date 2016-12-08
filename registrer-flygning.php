@@ -1,10 +1,7 @@
 <?php 
 	include("start.html")
 ?>
-<head>
-<script type="text/javascript" src="validering.js"></script>
-<script type="text/javascript" src="registrer-flygning.js"></script>  
-</head>
+
 <h1>Registrer flygning</h1>
 
 	<form method="post" action="" id="PRG" name="form1" onSubmit="return validerFlygning()"> 
