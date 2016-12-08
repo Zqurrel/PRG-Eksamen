@@ -25,7 +25,7 @@ if(isset($_POST["registrer"]))
     $text1=$_POST["text1"];
     function validerFlightnummer($nummer)
 {
-     $fil="flygning.txt";
+     $fil="D:\\sites\\home.hbv.no\\phptemp\\web-prg10v09/flygning.txt";
      $filoperasjon="r";
      $lesflygning=fopen($fil, $filoperasjon);
      $tilbakemelding="1";
@@ -61,7 +61,7 @@ if(isset($_POST["registrer"]))
             print "Dette flightnummeret eksisterer allerede!";
         }
         else {
-    $filnavn="flygning.txt";
+    $fil="D:\\sites\\home.hbv.no\\phptemp\\web-prg10v09/flygning.txt";
     $filoperasjon="a";
     $fil=fopen($filnavn,$filoperasjon);
     $linje=$flightnr . ";" . $fraflyplass . ";" . $tilflyplass . ";" . $text1 . "\n";
