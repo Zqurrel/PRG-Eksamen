@@ -46,7 +46,7 @@ if(isset($_POST["registrer"]))
       return $tilbakemelding;
 }       
     if(!$flightnr || !$fraflyplass || !$tilflyplass || !$text1) {
-        print("Alle felter må fylles ut!");
+        print("Alle feltene må fylles ut");
     }
 
 	else if ($fraflyplass == $tilflyplass) 
@@ -58,7 +58,7 @@ if(isset($_POST["registrer"]))
         $lovlig=validerFlightnummer($flightnr);
         if ($lovlig=="false")
         {
-            print "Dette flightnummeret eksisterer allerede!";
+            print "Flightnummeret finnes allerede";
         }
         else {
     $fil="D:\\sites\\home.hbv.no\\phptemp\\web-prg10v09/flygning.txt";
