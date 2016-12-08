@@ -1,12 +1,12 @@
 function validerFlyplassKode(kode)
 {
-	var bokstaver = /^[a-z]+$/;
+	var bokstaver = /^[a-z]+$/; //ulovlig tegn hvis man ikke har bokstaver
 	var lovlig;  
-	if (kode.length !=3) 
+	if (kode.length !=3) // flyplasskode kan ikke være lengere enn 3 tegn 
 	{
 		lovlig=false;
 	}
-	else if (!kode.match(bokstaver))
+	else if (!kode.match(bokstaver)) // koden ikke matcher med bokstaver
 	{
 		lovlig=false;
 	}
@@ -101,7 +101,7 @@ function validerFlygning()
 	tegn10=dato.substr(9,1);  /* tiende tegn i dato */
 	    if (tegn1 < "0" || tegn1 > "9" || tegn2 < "0" || tegn2 > "9" || tegn3 < "0" || tegn3 > "9" || tegn4 < "0" || tegn4 > "9" || /* årstall */
 		tegn5 < "-" || tegn5 > "-" || tegn6 < "0" || tegn6 > "1" || tegn7 < "0" || tegn7 > "2" ||  /* bindestrek og måned */
-		tegn8 < "-" || tegn8 > "-" || tegn9 < "0" || tegn9 > "3" || tegn10 < "0" || tegn10 > "9")  /* bindestrek og dato */
+		tegn8 < "-" || tegn8 > "-" || tegn9 < "0" || tegn10 > "3" || tegn10 < "0" || tegn10 > "9")  /* bindestrek og dato */
       {
         alert("Dato er ikke korrekt fyllt ut");
 		return false;
