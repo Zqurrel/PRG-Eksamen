@@ -117,10 +117,10 @@ var yy = parseInt(dato[0]);
 var mm  = parseInt(dato[1]);
 var dd = parseInt(dato[2]);
 // Liste over dager hver måned
-var listeoverdager = [31,28,31,30,31,30,31,31,30,31,30,31];
+var ListeoverDager = [31,28,31,30,31,30,31,31,30,31,30,31];
 if (mm==1 || mm>2)
 {
-if (dd>listeoverdager[mm-1])
+if (dd>ListeoverDager[mm-1])
 {
 alert('Dato er ikke korrekt fylt');
 return false;
