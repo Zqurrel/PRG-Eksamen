@@ -1,26 +1,24 @@
 <?php 
 	include("start.html")
-?> 
+?>
 <head>
-<script type="text/javascript" src="valider-flygning.js"></script>  
+<script type="text/javascript" src="valider-flygning.js"></script>
 <script type="text/javascript" src="registrer-flygning.js"></script>  
+</head>
 <h1>Registrer flygning</h1>
-	<form method="post" action="registrer-flygning.php" id="PRG" name="form1" onSubmit="return validerFlygning()"> 
+
+	<form method="post" action="" id="PRG" name="form1" onSubmit="return validerFlygning()"> 
 	Flightnr: <input type="text" id="flightnr" name="flightnr" placeholder="Skriv her"  onFocus="fokus(this)" onBlur="mistetFokus (this)" onMouseOver="musInn(this)" onMouseOut="musUt()" required /> </label> <br>
 	Fra flyplass: <input type="text" id="fraflyplass" name="fraflyplass" placeholder="Skriv her"  onFocus="fokus(this)" onBlur="mistetFokus (this)" onMouseOver="musInn(this)" onMouseOut="musUt()" required /> </label> <br>
     Til flyplass: <input type="text" id="tilflyplass" name="tilflyplass" placeholder="Skriv her"  onFocus="fokus(this)" onBlur="mistetFokus (this)" onMouseOver="musInn(this)" onMouseOut="musUt()" required /> </label> <br>
-	Dato: <input type='text' name='text1' id="dato" placeholder="Skriv her" onFocus="fokus(this)" onBlur="mistetFokus (this)" onMouseOver="musInn(this)" onMouseOut="musUt()" required /> <br>
-	<input type="submit" name="registrer" value="Registrer" onclick="validerdato(document.form1.text1)"/>
-</form>
-<br>
+    Dato: <input type="text" id="dato" name="text1" placeholder="Skriv her"  onFocus="fokus(this)" onBlur="mistetFokus (this)" onMouseOver="musInn(this)" onMouseOut="musUt()" required /> </label> <br>
+	<input type="submit" value="Registrer" name="registrer" id="registrer" onclick="return validatedate(document.form1.text1)"/>
+	<input type="reset" value="Nullstill" id="nullstill" />
+	</form>
+	<br>
 	<div id=melding> </div>
 	<br>
 	<div id=feilmelding> </div> 
-</head>
-<script>
-
-</script>
-</body>
 <?php
 if(isset($_POST["registrer"])) 
 {
@@ -53,6 +51,12 @@ if(isset($_POST["registrer"]))
     if(!$flightnr || !$fraflyplass || !$tilflyplass || !$text1) {
         print("Alle felter må fylles ut!");
     }
+
+	else if ($fraflyplass == $tilflyplass) 
+	{
+		print ("Du kan ikke reise til samme flyplass");
+	}
+	
     else {
         $lovlig=validerFlightnummer($flightnr);
         if ($lovlig=="false")
